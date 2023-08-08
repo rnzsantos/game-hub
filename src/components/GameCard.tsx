@@ -16,7 +16,7 @@ const GameCard = ({ game }: Props) => {
       <Image src={croppedImage} borderTopRadius={5} />
       <Stack marginY={5} spacing={3} paddingX={5}>
         <GamePlatformIcons platforms={platforms} />
-        <Heading size="lg">{game.name}</Heading>
+        <Heading size="md">{game.name}</Heading>
       </Stack>
     </Card>
   );
