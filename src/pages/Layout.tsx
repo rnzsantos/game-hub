@@ -1,4 +1,4 @@
-import { Grid, GridItem, Show } from '@chakra-ui/react';
+import { Container, Grid, GridItem, Show } from '@chakra-ui/react';
 import NavBar from '../components/NavBar';
 import GameGrid from '../components/GameGrid';
 
@@ -19,7 +19,9 @@ const Layout = () => {
         </GridItem>
       </Show>
       <GridItem area="main">
-        <GameGrid />
+        <Container maxWidth="full">
+          <GameGrid />
+        </Container>
       </GridItem>
     </Grid>
   );
