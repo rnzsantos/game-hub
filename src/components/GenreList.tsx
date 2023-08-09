@@ -1,9 +1,11 @@
 import { HStack, Heading, Image, Link, Stack } from '@chakra-ui/react';
-import useGenres from '../hooks/useGenres';
+import data from '../data/genres';
 import croppedImageURL from '../services/croppedImageURL';
+import useGameQueryStore from '../store';
 
 const GenreList = () => {
-  const { data } = useGenres();
+  const setGenre = useGameQueryStore((s) => s.setGenre);
+
   return (
     <Stack spacing={3}>
       <Heading size="md">Genres</Heading>
@@ -15,7 +17,9 @@ const GenreList = () => {
             fit="cover"
             rounded="lg"
           />
-          <Link key={genre.id}>{genre.name}</Link>
+          <Link key={genre.id} onClick={() => setGenre(genre.id)}>
+            {genre.name}
+          </Link>
         </HStack>
       ))}
     </Stack>
