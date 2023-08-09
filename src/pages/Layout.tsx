@@ -1,32 +1,26 @@
 import { Container, Grid, GridItem, Show } from '@chakra-ui/react';
+import React from 'react';
 import GameGrid from '../components/GameGrid';
 import GenreList from '../components/GenreList';
 import NavBar from '../components/NavBar';
 
 const Layout = () => {
   return (
-    <Grid
-      templateAreas={{
-        base: `"nav" "main"`,
-        lg: `"nav nav" "aside main"`,
-      }}
-    >
-      <GridItem area="nav">
-        <NavBar />
-      </GridItem>
-      <Show above="lg">
-        <GridItem area="aside">
-          <Container>
-            <GenreList />
-          </Container>
-        </GridItem>
-      </Show>
-      <GridItem area="main">
-        <Container maxWidth="full">
-          <GameGrid />
-        </Container>
-      </GridItem>
-    </Grid>
+    <React.Fragment>
+      <NavBar />
+      <Container maxWidth="container.xl">
+        <Grid templateAreas={`"aside main"`} gap={{ lg: 5 }}>
+          <Show above="lg">
+            <GridItem area="aside">
+              <GenreList />
+            </GridItem>
+          </Show>
+          <GridItem area="main">
+            <GameGrid />
+          </GridItem>
+        </Grid>
+      </Container>
+    </React.Fragment>
   );
 };
 
