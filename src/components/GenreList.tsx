@@ -1,6 +1,6 @@
 import { HStack, Heading, Image, Link, Stack } from '@chakra-ui/react';
 import data from '../data/genres';
-import croppedImageURL from '../services/croppedImageURL';
+import cropImage from '../services/image-url';
 import useGameQueryStore from '../store';
 
 const GenreList = () => {
@@ -12,7 +12,7 @@ const GenreList = () => {
       {data?.results.map((genre) => (
         <HStack key={genre.id}>
           <Image
-            src={croppedImageURL(genre.image_background)}
+            src={cropImage(genre.image_background)}
             boxSize="30px"
             fit="cover"
             rounded="lg"

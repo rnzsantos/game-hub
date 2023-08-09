@@ -1,18 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import Genre from '../entities/Genre';
-import HTTPService from '../services/http-service';
+import APIClient from '../services/api-client';
 
-interface AxiosResponse {
-  count: number;
-  results: Genre[];
-}
-
-const genresService = new HTTPService<AxiosResponse>('/genres');
+const apiClient = new APIClient<Genre>('/genres');
 
 const useGenres = () =>
   useQuery({
     queryKey: ['genres'],
-    queryFn: genresService.getAll,
+    queryFn: apiClient.getAll,
   });
 
 export default useGenres;

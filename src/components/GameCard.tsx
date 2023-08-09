@@ -1,6 +1,6 @@
 import { Card, Heading, Image, Stack } from '@chakra-ui/react';
 import Game from '../entities/Game';
-import croppedImageURL from '../services/croppedImageURL';
+import cropImage from '../services/image-url';
 import GamePlatformIcons from './GamePlatformIcons';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const GameCard = ({ game }: Props) => {
-  const croppedImage = croppedImageURL(game.background_image);
+  const croppedImage = cropImage(game.background_image);
   const platforms = game.parent_platforms.map(({ platform }) => platform);
 
   return (

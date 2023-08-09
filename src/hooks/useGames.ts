@@ -1,15 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import ms from 'ms';
 import Game from '../entities/Game';
-import HTTPService from '../services/http-service';
+import APIClient from '../services/api-client';
 import useGameQueryStore from '../store';
 
-interface AxiosResponse {
-  count: number;
-  results: Game[];
-}
-
-const gameService = new HTTPService<AxiosResponse>('/games');
+const apiClient = new APIClient<Game>('/games');
 
 const useGames = () => {
   const query = useGameQueryStore((s) => s.query);
@@ -17,7 +12,7 @@ const useGames = () => {
   return useQuery({
     queryKey: ['games', query],
     queryFn: () =>
-      gameService.getAll({
+      apiClient.getAll({
         params: {
           genres: query.genre,
         },
