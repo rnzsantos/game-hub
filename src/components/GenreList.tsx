@@ -1,5 +1,6 @@
 import { HStack, Heading, Image, Link, Stack } from '@chakra-ui/react';
 import useGenres from '../hooks/useGenres';
+import croppedImageURL from '../services/croppedImageURL';
 
 const GenreList = () => {
   const { data } = useGenres();
@@ -9,7 +10,7 @@ const GenreList = () => {
       {data?.results.map((genre) => (
         <HStack key={genre.id}>
           <Image
-            src={genre.image_background}
+            src={croppedImageURL(genre.image_background)}
             boxSize="30px"
             fit="cover"
             rounded="lg"
