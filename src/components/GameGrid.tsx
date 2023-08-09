@@ -6,7 +6,10 @@ const GameGrid = () => {
   const { data } = useGames();
 
   return (
-    <SimpleGrid columns={{ base: 1, md: 2, lg: 3, xl: 4 }} spacing={10}>
+    <SimpleGrid
+      columns={{ base: 1, md: 2, lg: 3, xl: 4 }}
+      spacing={{ base: 5, lg: 7 }}
+    >
       {data?.results.map((game) => (
         <GameCard key={game.id} game={game} />
       ))}
