@@ -1,4 +1,4 @@
-import { Card, HStack, Heading, Image, Stack } from '@chakra-ui/react';
+import { Card, CardBody, HStack, Heading, Image } from '@chakra-ui/react';
 import Game from '../entities/Game';
 import cropImage from '../services/image-url';
 import GamePlatformIcons from './GamePlatformIcons';
@@ -13,15 +13,15 @@ const GameCard = ({ game }: Props) => {
   const platforms = game.parent_platforms.map(({ platform }) => platform);
 
   return (
-    <Card maxWidth="max-content">
-      <Image src={croppedImage} borderTopRadius={5} />
-      <Stack marginY={5} spacing={3} paddingX={5}>
-        <HStack justifyContent="space-between">
+    <Card height="full">
+      <Image src={croppedImage} />
+      <CardBody>
+        <HStack justifyContent="space-between" marginBottom={2}>
           <GamePlatformIcons platforms={platforms} />
           <GameRatingBadge gameRating={game.metacritic} />
         </HStack>
         <Heading size={{ base: 'md', xl: 'lg' }}>{game.name}</Heading>
-      </Stack>
+      </CardBody>
     </Card>
   );
 };

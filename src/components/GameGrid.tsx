@@ -3,6 +3,7 @@ import React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import useGames from '../hooks/useGames';
 import GameCard from './GameCard';
+import GameCardContainer from './GameCardContainer';
 
 const GameGrid = () => {
   const { data, error, isLoading, fetchNextPage, hasNextPage } = useGames();
@@ -24,11 +25,14 @@ const GameGrid = () => {
       <SimpleGrid
         columns={{ base: 1, md: 3, xl: 4 }}
         spacing={{ base: 5, lg: 7 }}
+        padding={5}
       >
         {data.pages.map((page, index) => (
           <React.Fragment key={index}>
             {page.results.map((game) => (
-              <GameCard key={game.id} game={game} />
+              <GameCardContainer key={game.id}>
+                <GameCard game={game} />
+              </GameCardContainer>
             ))}
           </React.Fragment>
         ))}
