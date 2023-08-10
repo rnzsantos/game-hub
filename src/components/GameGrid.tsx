@@ -25,7 +25,7 @@ const GameGrid = () => {
       <SimpleGrid
         columns={{ base: 1, md: 2, xl: 3, '2xl': 4 }}
         spacing={{ base: 5, lg: 7 }}
-        padding={5}
+        padding={2}
       >
         {data.pages.map((page, index) => (
           <React.Fragment key={index}>
