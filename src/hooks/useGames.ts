@@ -17,6 +17,7 @@ const useGames = () => {
           search: gameQuery.searchText,
           search_precise: true,
           genres: gameQuery.genreId,
+          platforms: gameQuery.platformId,
           page: pageParam,
         },
       }),

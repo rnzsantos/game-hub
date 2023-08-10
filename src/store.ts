@@ -3,12 +3,14 @@ import { create } from 'zustand';
 interface GameQuery {
   searchText?: string;
   genreId?: number;
+  platformId?: number;
 }
 
 interface GameQueryStore {
   gameQuery: GameQuery;
   setSearchText: (searchText: string) => void;
   setGenreId: (genreId: number) => void;
+  setPlatformId: (platformId: number) => void;
 }
 
 const useGameQueryStore = create<GameQueryStore>((set) => ({
@@ -18,6 +20,8 @@ const useGameQueryStore = create<GameQueryStore>((set) => ({
     set((state) => ({
       gameQuery: { ...state.gameQuery, genreId, searchText: '' },
     })),
+  setPlatformId: (platformId) =>
+    set((state) => ({ gameQuery: { ...state.gameQuery, platformId } })),
 }));
 
 export default useGameQueryStore;
