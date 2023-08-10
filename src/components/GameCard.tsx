@@ -20,7 +20,7 @@ const GameCard = ({ game }: Props) => {
           <GamePlatformIcons platforms={platforms} />
           <GameRatingBadge gameRating={game.metacritic} />
         </HStack>
-        <Heading size={{ base: 'md', xl: 'lg' }}>{game.name}</Heading>
+        <Heading size="md">{game.name}</Heading>
       </CardBody>
     </Card>
   );

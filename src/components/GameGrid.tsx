@@ -23,7 +23,7 @@ const GameGrid = () => {
       loader={<Spinner />}
     >
       <SimpleGrid
-        columns={{ base: 1, md: 3, xl: 4 }}
+        columns={{ base: 1, md: 2, xl: 3, '2xl': 4 }}
         spacing={{ base: 5, lg: 7 }}
         padding={5}
       >
