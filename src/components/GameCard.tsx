@@ -13,7 +13,7 @@ const GameCard = ({ game }: Props) => {
   const platforms = game.parent_platforms?.map(({ platform }) => platform);
 
   return (
-    <Card height="full">
+    <Card maxW="xl" height="full">
       <Image src={croppedImage} />
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={2}>

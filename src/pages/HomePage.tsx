@@ -14,7 +14,7 @@ const HomePage = () => {
           <GenreList />
         </Show>
       </GridItem>
-      <GridItem area="main">
+      <GridItem area="main" paddingX={5}>
         <Box paddingLeft={2} marginBottom={5}>
           <PlatformSelector />
         </Box>
