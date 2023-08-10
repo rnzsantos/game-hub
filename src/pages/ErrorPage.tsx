@@ -9,7 +9,7 @@ const ErrorPage = () => {
   return (
     <React.Fragment>
       <NavBar />
-      <Container maxWidth="container.xl">
+      <Container maxWidth="full">
         <Heading>Oops</Heading>
         <Text>
           {isRouteErrorResponse(error)

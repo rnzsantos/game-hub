@@ -7,7 +7,7 @@ const Layout = () => {
   return (
     <React.Fragment>
       <NavBar />
-      <Container maxWidth="container.xl">
+      <Container maxWidth={{ base: '1920px' }}>
         <Outlet />
       </Container>
     </React.Fragment>

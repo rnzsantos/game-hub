@@ -4,7 +4,7 @@ import GenreList from '../components/GenreList';
 
 const HomePage = () => {
   return (
-    <Grid templateAreas={`"aside main"`} gap={{ lg: 5 }}>
+    <Grid templateAreas={`"aside main"`} gap={{ lg: 10 }}>
       <Show above="lg">
         <GridItem area="aside">
           <GenreList />

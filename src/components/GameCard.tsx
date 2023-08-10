@@ -12,11 +12,11 @@ const GameCard = ({ game }: Props) => {
   const platforms = game.parent_platforms.map(({ platform }) => platform);
 
   return (
-    <Card maxWidth="sm">
+    <Card maxWidth="max-content">
       <Image src={croppedImage} borderTopRadius={5} />
       <Stack marginY={5} spacing={3} paddingX={5}>
         <GamePlatformIcons platforms={platforms} />
-        <Heading size="md">{game.name}</Heading>
+        <Heading size="lg">{game.name}</Heading>
       </Stack>
     </Card>
   );
