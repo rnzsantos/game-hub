@@ -1,20 +1,20 @@
 import { useQuery } from '@tanstack/react-query';
 import ms from 'ms';
 import Game from '../entities/Game';
-import APIClient from '../services/api-client';
+import APIClient, { GetResponse } from '../services/api-client';
 import useGameQueryStore from '../store';
 
 const apiClient = new APIClient<Game>('/games');
 
 const useGames = () => {
-  const query = useGameQueryStore((s) => s.query);
+  const gameQuery = useGameQueryStore((s) => s.gameQuery);
 
-  return useQuery({
-    queryKey: ['games', query],
+  return useQuery<GetResponse<Game>, Error>({
+    queryKey: ['games', gameQuery],
     queryFn: () =>
       apiClient.getAll({
         params: {
-          genres: query.genre,
+          genres: gameQuery.genreId,
         },
       }),
     staleTime: ms('24h'),

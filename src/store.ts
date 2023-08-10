@@ -1,17 +1,18 @@
 import { create } from 'zustand';
 
 interface GameQuery {
-  genre?: number;
+  genreId?: number;
 }
 
 interface GameQueryStore {
-  query: GameQuery;
-  setGenre: (id: number) => void;
+  gameQuery: GameQuery;
+  setGenreId: (genreId: number) => void;
 }
 
 const useGameQueryStore = create<GameQueryStore>((set) => ({
-  query: {},
-  setGenre: (id) => set(() => ({ query: { genre: id } })),
+  gameQuery: {},
+  setGenreId: (genreId) =>
+    set((state) => ({ gameQuery: { ...state.gameQuery, genreId } })),
 }));
 
 export default useGameQueryStore;
