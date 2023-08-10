@@ -11,7 +11,7 @@ const GameGrid = () => {
 
   return (
     <SimpleGrid
-      columns={{ base: 1, md: 2, lg: 3, xl: 4 }}
+      columns={{ base: 1, md: 3, xl: 4 }}
       spacing={{ base: 5, lg: 7 }}
     >
       {data?.results.map((game) => (
