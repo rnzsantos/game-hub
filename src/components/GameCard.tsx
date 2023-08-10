@@ -10,7 +10,7 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   const croppedImage = cropImage(game.background_image);
-  const platforms = game.parent_platforms.map(({ platform }) => platform);
+  const platforms = game.parent_platforms?.map(({ platform }) => platform);
 
   return (
     <Card height="full">

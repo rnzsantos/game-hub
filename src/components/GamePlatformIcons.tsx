@@ -11,7 +11,7 @@ interface Props {
   platforms: Platform[];
 }
 
-const GamePlatformIcons = ({ platforms }: Props) => {
+const GamePlatformIcons = ({ platforms = [] }: Props) => {
   const platformIconsMap: { [key: string]: IconType } = {
     playstation: BsPlaystation,
     xbox: BsXbox,

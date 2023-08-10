@@ -15,6 +15,7 @@ const useGames = () => {
       apiClient.getAll({
         params: {
           search: gameQuery.searchText,
+          search_precise: true,
           genres: gameQuery.genreId,
           page: pageParam,
         },
