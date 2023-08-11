@@ -8,7 +8,7 @@ const GenreList = () => {
   const setGenreId = useGameQueryStore((s) => s.setGenreId);
 
   return (
-    <Stack>
+    <Stack spacing={3}>
       <Heading size="md">Genres</Heading>
       {data?.results.map((genre) => (
         <HStack key={genre.id}>

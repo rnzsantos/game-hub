@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <>
       <NavBar />
-      <Container maxWidth="1920px">
+      <Container maxW="1920px" mt={5}>
         <Outlet />
       </Container>
     </>
