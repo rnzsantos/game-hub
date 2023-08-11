@@ -5,10 +5,10 @@ import SearchInput from './SearchInput';
 
 const NavBar = () => {
   return (
-    <Container maxW="1920px" py={5}>
+    <Container maxWidth="1920px">
       <HStack>
         <Link to="/">
-          <Image src={logo} boxSize="50px" fit="cover" />
+          <Image src={logo} boxSize="60px" objectFit="cover" />
         </Link>
         <SearchInput />
       </HStack>

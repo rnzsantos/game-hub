@@ -1,5 +1,6 @@
-import { Flex, Grid, GridItem, Show } from '@chakra-ui/react';
+import { Box, Flex, Grid, GridItem, Show } from '@chakra-ui/react';
 import GameGrid from '../components/GameGrid';
+import GameHeading from '../components/GameHeading';
 import GenreList from '../components/GenreList';
 import PlatformSelector from '../components/PlatformSelector';
 import SortSelector from '../components/SortSelector';
@@ -16,6 +17,9 @@ const HomePage = () => {
         </Show>
       </GridItem>
       <GridItem area="main">
+        <Box px={5}>
+          <GameHeading />
+        </Box>
         <Flex
           direction={{ base: 'column', sm: 'row' }}
           justify={{ sm: 'space-between' }}
