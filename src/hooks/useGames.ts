@@ -16,6 +16,7 @@ const useGames = () => {
         params: {
           search: gameQuery.searchText,
           search_precise: true,
+          search_exact: true,
           genres: gameQuery.genreId,
           parent_platforms: gameQuery.platformId,
           ordering: gameQuery.order,
