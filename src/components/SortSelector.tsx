@@ -1,7 +1,10 @@
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import { Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
+import useGameQueryStore from '../store';
 
 const SortSelector = () => {
+  const setOrder = useGameQueryStore((s) => s.setOrder);
+
   const menuItems = [
     { label: 'Name', value: 'name' },
     { label: 'Released Date', value: '-released' },
@@ -17,10 +20,7 @@ const SortSelector = () => {
       </MenuButton>
       <MenuList>
         {menuItems?.map((item) => (
-          <MenuItem
-            key={item.value}
-            // onClick={() => setPlatformId(platform.id)}
-          >
+          <MenuItem key={item.value} onClick={() => setOrder(item.value)}>
             {item.label}
           </MenuItem>
         ))}
