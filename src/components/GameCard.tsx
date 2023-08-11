@@ -3,6 +3,7 @@ import Game from '../entities/Game';
 import cropImage from '../services/image-url';
 import GamePlatformIcons from './GamePlatformIcons';
 import GameRatingBadge from './GameRatingBadge';
+import { Link } from 'react-router-dom';
 
 interface Props {
   game: Game;
@@ -13,7 +14,7 @@ const GameCard = ({ game }: Props) => {
   const platforms = game.parent_platforms?.map(({ platform }) => platform);
 
   return (
-    <Card maxW="xl" height="full">
+    <Card maxW="xl" height="full" as={Link} to={`/games/${game.slug}`}>
       <Image src={croppedImage} />
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={2}>
