@@ -3,20 +3,22 @@ import { Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import useGameQueryStore from '../store';
 
 const SortSelector = () => {
-  const setOrder = useGameQueryStore((s) => s.setOrder);
-
   const menuItems = [
-    { label: 'Name', value: 'name' },
-    { label: 'Released Date', value: '-released' },
-    { label: 'Date Added', value: '-added' },
-    { label: 'Rating', value: '-rating' },
-    { label: 'Metacritic', value: '-metacritic' },
+    { value: '', label: 'Relevance' },
+    { value: 'name', label: 'Name' },
+    { value: '-added', label: 'Date Added' },
+    { value: '-released', label: 'Release Date' },
+    { value: '-metacritic', label: 'Metacritic Score' },
   ];
+
+  const setOrder = useGameQueryStore((s) => s.setOrder);
+  const order = useGameQueryStore((s) => s.gameQuery.order);
+  const selectedOrder = menuItems.find((item) => item.value === order);
 
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-        Select Order
+        Order by: {selectedOrder?.label || 'Relevance'}
       </MenuButton>
       <MenuList>
         {menuItems?.map((item) => (

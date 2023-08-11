@@ -16,7 +16,12 @@ const HomePage = () => {
         </Show>
       </GridItem>
       <GridItem area="main">
-        <Flex justify="space-between" px={5}>
+        <Flex
+          direction={{ base: 'column', sm: 'row' }}
+          justify={{ sm: 'space-between' }}
+          gap={{ base: 5, sm: 0 }}
+          px={5}
+        >
           <PlatformSelector />
           <SortSelector />
         </Flex>
