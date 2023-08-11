@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Show } from '@chakra-ui/react';
+import { Grid, GridItem, Show } from '@chakra-ui/react';
 import GameGrid from '../components/GameGrid';
 import GenreList from '../components/GenreList';
 import PlatformSelector from '../components/PlatformSelector';
@@ -6,7 +6,7 @@ import PlatformSelector from '../components/PlatformSelector';
 const HomePage = () => {
   return (
     <Grid
-      templateAreas={{ base: `"main"`, lg: `'aside main'` }}
+      templateAreas={{ base: `'main'`, lg: `'aside main'` }}
       templateColumns={{ lg: 'max-content 1fr' }}
     >
       <GridItem area="aside">
@@ -14,10 +14,8 @@ const HomePage = () => {
           <GenreList />
         </Show>
       </GridItem>
-      <GridItem area="main" paddingX={5}>
-        <Box paddingLeft={2} marginBottom={5}>
-          <PlatformSelector />
-        </Box>
+      <GridItem area="main">
+        <PlatformSelector />
         <GameGrid />
       </GridItem>
     </Grid>

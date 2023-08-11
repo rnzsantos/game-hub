@@ -8,17 +8,17 @@ const GenreList = () => {
   const setGenreId = useGameQueryStore((s) => s.setGenreId);
 
   return (
-    <Stack spacing={3}>
+    <Stack>
       <Heading size="md">Genres</Heading>
       {data?.results.map((genre) => (
         <HStack key={genre.id}>
           <Image
-            src={cropImage(genre.image_background)}
             boxSize="30px"
             fit="cover"
             rounded="lg"
+            src={cropImage(genre.image_background)}
           />
-          <Button variant="link" onClick={() => setGenreId(genre.id)}>
+          <Button onClick={() => setGenreId(genre.id)} variant="link">
             {genre.name}
           </Button>
         </HStack>

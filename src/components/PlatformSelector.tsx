@@ -5,14 +5,14 @@ import useGameQueryStore from '../store';
 
 const PlatformSelector = () => {
   const { data } = usePlatforms();
-  const platformId = useGameQueryStore((s) => s.gameQuery.platformId);
   const setPlatformId = useGameQueryStore((s) => s.setPlatformId);
-  const label = data?.results.find((platform) => platform.id === platformId);
+  const platformId = useGameQueryStore((s) => s.gameQuery.platformId);
+  const selectedPlatform = data?.results.find((p) => p.id === platformId);
 
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-        {label ? label?.name : 'Select Platform'}
+        {selectedPlatform?.name || 'Select Platform'}
       </MenuButton>
       <MenuList>
         {data?.results.map((platform) => (

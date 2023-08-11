@@ -3,16 +3,14 @@ import SearchInput from './SearchInput';
 
 const NavBar = () => {
   return (
-    <HStack>
-      <Container maxWidth="1920px" paddingY={5}>
-        <HStack>
-          <Heading size="lg" whiteSpace="nowrap">
-            Game-Hub
-          </Heading>
-          <SearchInput />
-        </HStack>
-      </Container>
-    </HStack>
+    <Container maxW="1920px" py={5}>
+      <HStack>
+        <Heading size="lg" whiteSpace="nowrap">
+          Game-Hub
+        </Heading>
+        <SearchInput />
+      </HStack>
+    </Container>
   );
 };
 

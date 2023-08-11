@@ -19,15 +19,11 @@ const GameGrid = () => {
   return (
     <InfiniteScroll
       dataLength={allFetchedGames}
-      next={() => fetchNextPage()}
       hasMore={!!hasNextPage}
       loader={<Spinner />}
+      next={() => fetchNextPage()}
     >
-      <SimpleGrid
-        columns={{ base: 1, md: 2, xl: 3, '2xl': 4 }}
-        spacing={{ base: 5, lg: 7 }}
-        padding={2}
-      >
+      <SimpleGrid columns={{ base: 1, md: 2, xl: 3, '2xl': 4 }} spacing={5}>
         {isLoading &&
           skeletons.map((skeleton) => (
             <GameCardContainer key={skeleton}>
